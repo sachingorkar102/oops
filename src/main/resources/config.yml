@@ -1,0 +1,11 @@
+# The amount of seconds player has to remove a accidental placement
+time-out: 2
+
+# if set to false all players will be able to use the undo feature without the permission check of oops.use.undo
+check-permission: true
+
+# A list of blocks to exclude
+# Pro tip:
+  # use NAME$ to take those names into account which end with "NAME" eg. "SHULKER_BOX$"
+  # use ^NAME to take those names into acccount which start with "NAME" eg. "^NETHERITE"
+black-list-materials: ["CHEST","TRAPPED_CHEST"]
