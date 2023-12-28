@@ -1,5 +1,6 @@
-package com.github.sachin.oops;
+package com.github.sachin.oops.utils;
 
+import com.github.sachin.oops.Oops;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
 import org.bukkit.NamespacedKey;

@@ -1,8 +1,19 @@
-# The amount of seconds player has to remove a accidental placement
+# whether to enable bstats or not
+metrics: true
+
+# The amount of seconds player has to remove a accidental block placement
 time-out: 2
 
 # if set to false all players will be able to use the undo feature without the permission check of oops.use.undo
 check-permission: true
+
+#  list of aliases to be used for toggle command
+command-aliases: [toggleundo,tu]
+
+messages:
+  prefix: "&e[&6Oops&e] "
+  oops-use-enabled: "&aUndo feature enabled"
+  oops-use-disabled: "&aUndo feature disabled"
 
 # A list of blocks to exclude
 # Pro tip:

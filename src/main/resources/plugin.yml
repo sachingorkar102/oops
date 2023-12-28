@@ -3,7 +3,7 @@ version: ${project.version}
 main: com.github.sachin.oops.Oops
 api-version: 1.16
 authors: [ sachingorkar ]
-description: Undo your misplaced block with ease
+description: Undo your misplaced block within 2 seconds
 commands:
   oops:
     description: core command for oops
@@ -12,6 +12,9 @@ permissions:
   oops.command.reload:
     description: reloads oops plugin config
     default: op
+  oops.command.toggle:
+    description: permission to use the toggle command
+    default: true
   oops.use.undo:
     description: permission to use the undo feature
     default: true

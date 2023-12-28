@@ -1,4 +1,4 @@
-package com.github.sachin.oops;
+package com.github.sachin.oops.utils;
 
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
