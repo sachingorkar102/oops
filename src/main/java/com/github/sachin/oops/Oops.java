@@ -54,7 +54,7 @@ public class Oops extends JavaPlugin implements Listener {
         CustomBlockData data = new CustomBlockData(e.getBlockPlaced().getLocation());
         data.set(OConstants.PLACER_KEY, DataType.UUID,player.getUniqueId());
         data.set(OConstants.ITEM_KEY,DataType.ITEM_STACK,item);
-
+        data.set(OConstants.BLOCK_KEY,DataType.BLOCK_DATA,e.getBlockReplacedState().getBlockData());
         data.set(OConstants.TIME_KEY, PersistentDataType.LONG,System.currentTimeMillis());
     }
 
@@ -62,6 +62,7 @@ public class Oops extends JavaPlugin implements Listener {
     public void onPlayerInteract(PlayerInteractEvent e){
         if(e.getAction() != Action.LEFT_CLICK_BLOCK) return;
         Player player = e.getPlayer();
+        if(player.getGameMode() != GameMode.SURVIVAL) return;
         if(getConfig().getBoolean("check-permission") && !player.hasPermission(OConstants.USE_OOPS_PERM)) return;
         CustomBlockData data = new CustomBlockData(e.getClickedBlock().getLocation());
         if(data.has(OConstants.TIME_KEY,PersistentDataType.LONG)){
@@ -77,8 +78,9 @@ public class Oops extends JavaPlugin implements Listener {
                 BlockBreakEvent event = new BlockBreakEvent(e.getClickedBlock(),player);
                 getServer().getPluginManager().callEvent(event);
                 if(event.isCancelled()) return;
-                e.getClickedBlock().setType(Material.AIR);
+                e.getClickedBlock().setBlockData(data.get(OConstants.BLOCK_KEY,DataType.BLOCK_DATA));
                 e.getPlayer().getWorld().dropItem(e.getClickedBlock().getLocation().add(.5,.5,.5),item);
+                clearBlockData(data);
 
             }
         }

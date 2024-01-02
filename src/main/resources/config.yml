@@ -19,4 +19,4 @@ messages:
 # Pro tip:
   # use NAME$ to take those names into account which end with "NAME" eg. "SHULKER_BOX$"
   # use ^NAME to take those names into acccount which start with "NAME" eg. "^NETHERITE"
-black-list-materials: ["CHEST","TRAPPED_CHEST"]
+black-list-materials: [CHEST,TRAPPED_CHEST,FLINT_AND_STEEL,POWDER_SNOW_BUCKET]
